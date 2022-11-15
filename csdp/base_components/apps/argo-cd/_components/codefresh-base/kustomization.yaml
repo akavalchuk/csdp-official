@@ -55,6 +55,10 @@ patches:
             ephemeral-storage: 2Gi
           limits:
             ephemeral-storage: 4Gi
+      - op: remove
+        path: /spec/template/spec/containers/0/securityContext/seccompProfile
+      - op: remove
+        path: /spec/template/spec/initContainers/0/securityContext/seccompProfile
 
   - target:
       name: argocd-application-controller
